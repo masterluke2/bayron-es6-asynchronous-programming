@@ -3,7 +3,7 @@ class Instructor { constructor({id,name,subject}){ this.id=id; this.name=name; t
 class Course { constructor({id,title,description}){ this.id=id; this.title=title; this.description=description; } summary(){ return `${this.title}: ${this.description}`; } }
 
 class DataService {
-  static url = "/data/students.json"; // <- this file must exist
+  static url = "/data/students.json"; 
   static fetchWithThen(){ return fetch(DataService.url).then(r=>{ if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }); }
   static async fetchWithAsync(){ const r=await fetch(DataService.url); if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }
 }
@@ -62,3 +62,4 @@ function logRelationships({students,courses,instructors}){
     }
   })();
 })();
+
