@@ -45,7 +45,6 @@ function logRelationships({students,courses,instructors}){
 }
 
 (function main(){
-  // Show something immediately so you know JS is running
   document.getElementById("output").textContent = "Loading...";
   DataService.fetchWithThen()
     .then(d=>console.log("(.then) data:", d))
